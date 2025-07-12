@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ScrollToTopComponent } from "../../components/scroll-to-top-button/scroll-to-top.component";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ScrollToTopComponent],
   templateUrl: './about.html',
   styleUrl: './about.scss'
 })

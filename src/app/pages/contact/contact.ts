@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from '../../services/contact';
 import { ContactForm } from '../../models/product';
+import { ScrollToTopComponent } from "../../components/scroll-to-top-button/scroll-to-top.component";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ScrollToTopComponent],
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +13,20 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
   isMenuOpen = false;
 
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0}); // Scroll en haut avec animation
+      });
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
   closeMenu() {
     this.isMenuOpen = false;
+    //window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

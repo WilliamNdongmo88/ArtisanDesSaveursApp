@@ -1,0 +1,28 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s;
+
+  &:hover {
+    background-color: #6d0000;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

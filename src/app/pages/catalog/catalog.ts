@@ -5,11 +5,12 @@ import { ProductCardComponent } from '../../components/product-card/product-card
 import { ProductService } from '../../services/product';
 import { Product, ProductCategory } from '../../models/product';
 import { RouterModule } from '@angular/router';
+import { ScrollToTopComponent } from "../../components/scroll-to-top-button/scroll-to-top.component";
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, FormsModule, ProductCardComponent, RouterModule],
+  imports: [CommonModule, FormsModule, ProductCardComponent, RouterModule, ScrollToTopComponent],
   templateUrl: './catalog.html',
   styleUrl: './catalog.scss'
 })
