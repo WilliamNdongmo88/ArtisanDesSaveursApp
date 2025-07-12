@@ -53,7 +53,7 @@ export class AboutComponent {
     {
       icon: '🐷',
       title: 'Sélection Rigoureuse',
-      description: 'Nos porcs proviennent exclusivement d\'élevages français respectueux du bien-être animal. Nous visitons régulièrement nos partenaires pour nous assurer du respect de nos critères de qualité.'
+      description: 'Nos porcs proviennent exclusivement d\'élevages mauricien respectueux du bien-être animal. Nous visitons régulièrement nos partenaires pour nous assurer du respect de nos critères de qualité.'
     },
     {
       icon: '🔪',
