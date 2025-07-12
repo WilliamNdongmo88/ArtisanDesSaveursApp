@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from '../../components/product-card/product-card';
 import { ProductService } from '../../services/product';
 import { Product, ProductCategory } from '../../models/product';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, FormsModule, ProductCardComponent],
+  imports: [CommonModule, FormsModule, ProductCardComponent, RouterModule],
   templateUrl: './catalog.html',
   styleUrl: './catalog.scss'
 })
