@@ -11,12 +11,12 @@ export class ProductService {
       id: '1',
       name: 'Côtes de Porc Première',
       description: 'Côtes de porc fraîches, parfaites pour vos grillades et barbecues. Viande tendre et savoureuse, idéale pour les repas en famille ou entre amis.',
-      price: 12.90,
+      price: 583,
       unit: 'kg',
       category: ProductCategory.COTES_TRAVERS,
-      image: 'img/produits/cotes-de-porc.jpg',
+      image: 'img/produits/cote-de-porc.jpg',
       featured: true,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '2',
@@ -27,7 +27,7 @@ export class ProductService {
       category: ProductCategory.COTES_TRAVERS,
       image: 'img/produits/cotes-de-porc.jpg',
       featured: false,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '3',
@@ -38,7 +38,7 @@ export class ProductService {
       category: ProductCategory.ROTIS_FILETS,
       image: 'img/produits/roti-de-porc.jpg',
       featured: true,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '4',
@@ -49,7 +49,7 @@ export class ProductService {
       category: ProductCategory.ROTIS_FILETS,
       image: 'img/produits/roti-de-porc.jpg',
       featured: false,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '5',
@@ -60,7 +60,7 @@ export class ProductService {
       category: ProductCategory.ROTIS_FILETS,
       image: 'img/produits/roti-de-porc.jpg',
       featured: false,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '6',
@@ -102,9 +102,9 @@ export class ProductService {
       price: 7.90,
       unit: 'kg',
       category: ProductCategory.MORCEAUX_BRAISER,
-      image: 'img/produits/cotes-de-porc.jpg',
+      image: 'img/produits/jarret-de-porc.jpg',
       featured: false,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '10',
@@ -113,9 +113,9 @@ export class ProductService {
       price: 9.90,
       unit: 'kg',
       category: ProductCategory.MORCEAUX_BRAISER,
-      image: 'img/produits/cotes-de-porc.jpg',
+      image: 'img/produits/palette-de-porc.jpg',
       featured: false,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '11',
@@ -124,9 +124,9 @@ export class ProductService {
       price: 6.90,
       unit: 'kg',
       category: ProductCategory.MORCEAUX_BRAISER,
-      image: 'img/produits/cotes-de-porc.jpg',
+      image: 'img/produits/poitrine-de-porc.jpg',
       featured: false,
-      origin: 'France'
+      origin: 'Île Maurice'
     },
     {
       id: '12',

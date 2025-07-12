@@ -12,21 +12,21 @@ import { RouterModule } from '@angular/router';
 export class AboutComponent {
   teamMembers = [
     {
-      name: 'Jean-Pierre Dubois',
+      name: 'Vital',
       role: 'Fondateur & Maître Boucher',
-      description: 'Avec plus de 40 ans d\'expérience, Jean-Pierre a fondé la boucherie avec la passion de transmettre les traditions de son métier. Il supervise personnellement la sélection de nos fournisseurs.',
+      description: 'Avec plus de 3 ans d\'expérience, Vital a fondé la boucherie avec la passion de transmettre les traditions de son métier. Il supervise personnellement la sélection de nos fournisseurs.',
       icon: '👨‍🍳'
     },
     {
-      name: 'Marc Dubois',
+      name: 'Damien',
       role: 'Boucher & Responsable Qualité',
-      description: 'Fils de Jean-Pierre, Marc a repris le flambeau familial. Formé aux techniques modernes tout en respectant les traditions, il assure la continuité de notre savoir-faire.',
+      description: 'Damien a repris le flambeau familial. Formé aux techniques modernes tout en respectant les traditions, il assure la continuité de notre savoir-faire.',
       icon: '👨‍💼'
     },
     {
-      name: 'Sophie Martin',
+      name: 'Christelle',
       role: 'Responsable Clientèle',
-      description: 'Sophie accueille nos clients avec le sourire et les conseille dans leurs choix. Sa connaissance approfondie de nos produits en fait une ambassadrice de notre qualité.',
+      description: 'Christelle accueille nos clients avec le sourire et les conseille dans leurs choix. Sa connaissance approfondie de nos produits en fait une ambassadrice de notre qualité.',
       icon: '👩‍💼'
     }
   ];
