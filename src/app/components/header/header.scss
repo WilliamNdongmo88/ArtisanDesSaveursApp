@@ -1,0 +1,429 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0;
+
+    .brand-title {
+      color: #8B0000;
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin: 0;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+        color: #654321;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    flex-shrink: 0;
+
+    .navbar-toggler-icon {
+      width: 25px;
+      height: 3px;
+      background-color: #8B0000;
+      margin: 3px 0;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    &.active {
+      .navbar-toggler-icon:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .navbar-toggler-icon:nth-child(2) {
+        opacity: 0;
+      }
+
+      .navbar-toggler-icon:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+  }
+
+  .navbar-collapse {
+    display: flex;
+  }
+
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+
+    .nav-item {
+      .nav-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        position: relative;
+        white-space: nowrap;
+
+        &:hover {
+          color: #8B0000;
+          background-color: rgba(139, 0, 0, 0.1);
+        }
+
+        &.active {
+          color: #8B0000;
+          font-weight: 600;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background-color: #8B0000;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animation pour le scroll
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+// Responsive Design - Amélioré pour tous les écrans
+// Tablettes et écrans moyens (768px - 1024px)
+@media (max-width: 1024px) {
+  .navbar {
+    .navbar-nav {
+      gap: 1.5rem;
+
+      .nav-item {
+        .nav-link {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
+// Tablettes (768px - 992px)
+@media (max-width: 992px) {
+  .navbar {
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .navbar-brand {
+      .brand-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    .navbar-nav {
+      gap: 1.2rem;
+
+      .nav-item {
+        .nav-link {
+          padding: 0.4rem 0.7rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Smartphones et petites tablettes (576px - 768px)
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0;
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .navbar-brand {
+      .brand-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .navbar-toggler {
+      display: flex;
+    }
+
+    .navbar-collapse {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+      gap: 0;
+
+      .nav-item {
+        .nav-link {
+          display: block;
+          padding: 1rem;
+          border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+          font-size: 1rem;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &.active::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Petits smartphones (480px - 576px)
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0.7rem 0;
+
+    .container {
+      padding: 0 0.8rem;
+    }
+
+    .navbar-brand {
+      .brand-title {
+        font-size: 1.4rem;
+      }
+    }
+
+    .navbar-toggler {
+      width: 28px;
+      height: 28px;
+      padding: 0.4rem;
+
+      .navbar-toggler-icon {
+        width: 22px;
+        height: 2.5px;
+        margin: 2.5px 0;
+      }
+    }
+
+    .navbar-collapse {
+      padding: 0.8rem;
+
+      &.show {
+        animation: slideDown 0.3s ease-out;
+      }
+    }
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 0.8rem;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
+// Très petits écrans (333px - 480px)
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 0;
+
+    .container {
+      padding: 0 0.6rem;
+    }
+
+    .navbar-brand {
+      .brand-title {
+        font-size: 1.3rem;
+        line-height: 1.2;
+      }
+    }
+
+    .navbar-toggler {
+      width: 26px;
+      height: 26px;
+      padding: 0.3rem;
+
+      .navbar-toggler-icon {
+        width: 20px;
+        height: 2px;
+        margin: 2px 0;
+      }
+
+      &.active {
+        .navbar-toggler-icon:nth-child(1) {
+          transform: rotate(-45deg) translate(-4px, 5px);
+        }
+
+        .navbar-toggler-icon:nth-child(3) {
+          transform: rotate(45deg) translate(-4px, -5px);
+        }
+      }
+    }
+
+    .navbar-collapse {
+      padding: 0.6rem;
+    }
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 0.7rem 0.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Écrans ultra-petits (333px minimum)
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.5rem 0;
+
+    .container {
+      padding: 0 0.5rem;
+    }
+
+    .navbar-brand {
+      .brand-title {
+        font-size: 1.2rem;
+        line-height: 1.1;
+      }
+    }
+
+    .navbar-toggler {
+      width: 24px;
+      height: 24px;
+      padding: 0.2rem;
+
+      .navbar-toggler-icon {
+        width: 18px;
+        height: 2px;
+        margin: 2px 0;
+      }
+
+      &.active {
+        .navbar-toggler-icon:nth-child(1) {
+          transform: rotate(-45deg) translate(-3px, 4px);
+        }
+
+        .navbar-toggler-icon:nth-child(3) {
+          transform: rotate(45deg) translate(-3px, -4px);
+        }
+      }
+    }
+
+    .navbar-collapse {
+      padding: 0.5rem;
+    }
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 0.6rem 0.4rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+// Animation pour le menu mobile
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Amélioration de l'accessibilité tactile
+@media (hover: none) and (pointer: coarse) {
+  .navbar {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          min-height: 44px; // Taille minimale recommandée pour les éléments tactiles
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// Optimisation pour les écrans haute densité
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .navbar {
+    .navbar-toggler-icon {
+      background-image: linear-gradient(to bottom, #8B0000, #8B0000);
+    }
+  }
+}

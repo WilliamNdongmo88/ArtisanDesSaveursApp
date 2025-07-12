@@ -1,0 +1,1204 @@
+// Page Header
+.page-header {
+  background: linear-gradient(135deg, #8B0000 0%, #654321 100%);
+  color: white;
+  padding: 8rem 0 4rem;
+  margin-top: 80px;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .header-content {
+    text-align: left;
+
+    .page-title {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Georgia', serif;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Story Section
+.story-section {
+  padding: 4rem 0;
+  background: white;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .story-text {
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #8B0000;
+      font-family: 'Georgia', serif;
+      margin-bottom: 2rem;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 4px;
+      background: #8B0000;
+      margin: 0 0 1.5rem 0;
+      border-radius: 2px;
+    }
+
+    .story-paragraphs {
+      p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #fdfdfd 0%, #eef0f2 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid #8B0000;
+        margin-top: 2rem;
+
+        h3 {
+          font-size: calc(1.3rem + .6vw);
+          font-weight: 700;
+          color: #8B0000;
+          margin-bottom: 1rem;
+          margin-top: -0.5rem;
+        }
+
+        p {
+          margin-bottom: 0;
+          font-style: normal;
+        }
+      }
+    }
+  }
+
+  .story-image {
+    .story-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// Commitments Section
+.commitments-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    text-align: left;
+    margin-bottom: 3rem;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #8B0000;
+      font-family: 'Georgia', serif;
+      margin-bottom: 1rem;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 4px;
+      background: #8B0000;
+      margin: 0 0 1.5rem 0;
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #7f8c8d;
+      max-width: 600px;
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+
+  .commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .commitment-card {
+      .highlight-box {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid #8B0000;
+        margin-top: 0;
+        height: 100%;
+        box-sizing: border-box;
+
+        h3 {
+          font-size: calc(1.0rem + .6vw);
+          font-weight: 700;
+          color: #8B0000;
+          margin-bottom: 1rem;
+          margin-top: 0;
+        }
+
+        p {
+          margin-bottom: 0;
+          font-style: normal;
+          font-size: 1rem;
+          color: #656565;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+// Team Section
+.team-section {
+  padding: 4rem 0;
+  background: white;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #8B0000;
+      font-family: 'Georgia', serif;
+      margin-bottom: 1rem;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 4px;
+      background: #8B0000;
+      margin: 0 auto 1.5rem;
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #7f8c8d;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .team-card {
+    background: #f8f9fa;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #8B0000, #654321);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 1.5rem;
+      color: white;
+    }
+
+    .team-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+      font-size: 1rem;
+      color: #8B0000;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .team-description {
+      color: #7f8c8d;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+
+// Values Section
+.values-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    text-align: left;
+    margin-bottom: 3rem;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #8B0000;
+      font-family: 'Georgia', serif;
+      margin-bottom: 1rem;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 4px;
+      background: #8B0000;
+      margin: 0 0 1.5rem 0;
+      border-radius: 2px;
+    }
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .value-card {
+      .highlight-box {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid #8B0000;
+        margin-top: 0;
+        height: 100%;
+        box-sizing: border-box;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+        h3 {
+          font-size: calc(1.0rem + .6vw);
+          font-weight: 700;
+          color: #8B0000;
+          margin-bottom: 1rem;
+          margin-top: 0;
+        }
+
+        p {
+          margin-bottom: 0;
+          font-style: normal;
+          font-size: 1rem;
+          color: #656565;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+// Expertise Section
+.expertise-section {
+  padding: 4rem 0;
+  background: white;
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .expertise-content {
+    text-align: left;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #8B0000;
+      font-family: 'Georgia', serif;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 4px;
+      background: #8B0000;
+      margin: 0 0 1.5rem 0;
+      border-radius: 2px;
+    }
+
+    .expertise-intro {
+      font-size: 1.1rem;
+      color: #7f8c8d;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .expertise-list {
+      text-align: left;
+      margin-bottom: 3rem;
+      padding: 0;
+
+      .expertise-item {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border-left: 4px solid #8B0000;
+        line-height: 1.6;
+
+        strong {
+          color: #2c3e50;
+        }
+      }
+    }
+
+    .recognition-box {
+      background: linear-gradient(135deg, #8B0000 0%, #654321 100%);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      text-align: center;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .cta-content {
+    text-align: center;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #7f8c8d;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: inline-block;
+
+      &.btn-primary {
+        background: #8B0000;
+        color: white;
+        border: 2px solid #8B0000;
+
+        &:hover {
+          background: #6d0000;
+          border-color: #6d0000;
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// Animations
+.commitment-card,
+.team-card,
+.value-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design - Amélioré pour tous les écrans
+// Tablettes et écrans moyens (768px - 1024px)
+@media (max-width: 1024px) {
+  .story-section,
+  .commitments-section,
+  .team-section,
+  .values-section,
+  .expertise-section {
+    padding: 3.5rem 0;
+  }
+
+  .commitments-grid,
+  .team-grid,
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+}
+
+// Tablettes (768px - 992px)
+@media (max-width: 992px) {
+  .page-header {
+    padding: 6rem 0 3rem;
+
+    .header-content {
+      .page-title {
+        font-size: 2.5rem;
+      }
+
+      .page-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .story-section,
+  .commitments-section,
+  .team-section,
+  .values-section,
+  .expertise-section {
+    padding: 3rem 0;
+
+    .section-header {
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .story-section {
+    .story-content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .story-text {
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .commitments-grid,
+  .team-grid,
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.6rem;
+  }
+}
+
+// Smartphones et petites tablettes (576px - 768px)
+@media (max-width: 768px) {
+  .page-header {
+    padding: 5rem 0 2.5rem;
+    margin-top: 60px;
+
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .header-content {
+      text-align: center;
+
+      .page-title {
+        font-size: 2.2rem;
+      }
+
+      .page-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .story-section,
+  .commitments-section,
+  .team-section,
+  .values-section,
+  .expertise-section {
+    padding: 2.5rem 0;
+
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .story-section {
+    .story-content {
+      gap: 2rem;
+    }
+
+    .story-text {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .story-paragraphs {
+        p {
+          font-size: 1rem;
+        }
+
+        .highlight-box {
+          padding: 1.5rem;
+
+          h3 {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .commitments-grid,
+  .team-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    padding: 2rem 1.5rem;
+
+    .team-avatar {
+      width: 70px;
+      height: 70px;
+      font-size: 2rem;
+    }
+  }
+
+  .expertise-section {
+    .expertise-content {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .expertise-list {
+        padding: 0;
+
+        .expertise-item {
+          padding: 1.2rem;
+        }
+      }
+
+      .recognition-box {
+        padding: 2rem;
+      }
+    }
+  }
+
+  .cta-section {
+    padding: 3rem 0;
+
+    .cta-content {
+      h3 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Petits smartphones (480px - 576px)
+@media (max-width: 576px) {
+  .page-header {
+    padding: 4rem 0 2rem;
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .header-content {
+      .page-title {
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .page-subtitle {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .story-section,
+  .commitments-section,
+  .team-section,
+  .values-section,
+  .expertise-section {
+    padding: 2rem 0;
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+
+      .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .story-section {
+    .story-text {
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .story-paragraphs {
+        p {
+          font-size: 0.95rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .highlight-box {
+          padding: 1.2rem;
+          margin-top: 1.5rem;
+
+          h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  .commitments-grid,
+  .values-grid {
+    gap: 1.2rem;
+
+    .commitment-card,
+    .value-card {
+      .highlight-box {
+        padding: 1.5rem;
+
+        h3 {
+          font-size: 1rem;
+          margin-bottom: 0.8rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .team-grid {
+    gap: 1.2rem;
+  }
+
+  .team-card {
+    padding: 1.5rem 1.2rem;
+
+    .team-avatar {
+      width: 60px;
+      height: 60px;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-name {
+      font-size: 1.1rem;
+    }
+
+    .team-role {
+      font-size: 0.9rem;
+    }
+
+    .team-description {
+      font-size: 0.9rem;
+    }
+  }
+
+  .expertise-section {
+    .expertise-content {
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .expertise-intro {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .expertise-list {
+        margin-bottom: 2rem;
+
+        .expertise-item {
+          padding: 1rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .recognition-box {
+        padding: 1.5rem;
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .cta-section {
+    padding: 2.5rem 0;
+
+    .cta-content {
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Très petits écrans (333px - 480px)
+@media (max-width: 480px) {
+  .page-header {
+    padding: 3rem 0 1.5rem;
+
+    .container {
+      padding: 0 0.8rem;
+    }
+
+    .header-content {
+      .page-title {
+        font-size: 1.7rem;
+        line-height: 1.2;
+      }
+
+      .page-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .story-section,
+  .commitments-section,
+  .team-section,
+  .values-section,
+  .expertise-section {
+    padding: 1.5rem 0;
+
+    .container {
+      padding: 0 0.8rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.2rem;
+
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .section-divider {
+        width: 60px;
+        height: 3px;
+      }
+
+      .section-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .story-section {
+    .story-text {
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .story-paragraphs {
+        p {
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+          padding: 1rem;
+          margin-top: 1.2rem;
+
+          h3 {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+          }
+
+          p {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+
+  .commitments-grid,
+  .values-grid {
+    gap: 1rem;
+
+    .commitment-card,
+    .value-card {
+      .highlight-box {
+        padding: 1.2rem;
+
+        h3 {
+          font-size: 0.95rem;
+          margin-bottom: 0.6rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  .team-grid {
+    gap: 1rem;
+  }
+
+  .team-card {
+    padding: 1.2rem 1rem;
+
+    .team-avatar {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .team-name {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-role {
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .team-description {
+      font-size: 0.85rem;
+    }
+  }
+
+  .expertise-section {
+    .expertise-content {
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .expertise-intro {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .expertise-list {
+        margin-bottom: 1.5rem;
+
+        .expertise-item {
+          padding: 0.8rem;
+          font-size: 0.85rem;
+          margin-bottom: 0.8rem;
+        }
+      }
+
+      .recognition-box {
+        padding: 1.2rem;
+
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  .cta-section {
+    padding: 2rem 0;
+
+    .cta-content {
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Écrans ultra-petits (333px minimum)
+@media (max-width: 360px) {
+  .page-header {
+    .header-content {
+      .page-title {
+        font-size: 1.5rem;
+      }
+
+      .page-subtitle {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .story-section,
+  .commitments-section,
+  .team-section,
+  .values-section,
+  .expertise-section {
+    .section-header {
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .story-section {
+    .story-text {
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .story-paragraphs {
+        p {
+          font-size: 0.85rem;
+        }
+
+        .highlight-box {
+          padding: 0.8rem;
+
+          h3 {
+            font-size: 0.9rem;
+          }
+
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .commitments-grid,
+  .values-grid {
+    .commitment-card,
+    .value-card {
+      .highlight-box {
+        padding: 1rem;
+
+        h3 {
+          font-size: 0.9rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .team-card {
+    padding: 1rem 0.8rem;
+
+    .team-avatar {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+    }
+
+    .team-name {
+      font-size: 0.95rem;
+    }
+
+    .team-role {
+      font-size: 0.8rem;
+    }
+
+    .team-description {
+      font-size: 0.8rem;
+    }
+  }
+
+  .expertise-section {
+    .expertise-content {
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .expertise-intro {
+        font-size: 0.85rem;
+      }
+
+      .expertise-list {
+        .expertise-item {
+          padding: 0.7rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      .recognition-box {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .cta-section {
+    .cta-content {
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+
+      .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,238 @@
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="header-content">
+      <h1 class="page-title">Nous Contacter</h1>
+      <p class="page-subtitle">
+        N'hésitez pas à nous contacter pour toute question ou commande spéciale
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Content -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-content">
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+        <h2 class="form-title">Envoyez-nous un message</h2>
+        
+        <!-- Success/Error Message -->
+        <div *ngIf="submitMessage" class="alert" [class.alert-success]="submitSuccess" [class.alert-error]="!submitSuccess">
+          {{ submitMessage }}
+        </div>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName" class="form-label">Prénom <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="firstName"
+                formControlName="firstName"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('firstName')"
+                placeholder="Votre prénom">
+              <div *ngIf="getFieldError('firstName')" class="error-message">
+                {{ getFieldError('firstName') }}
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="lastName" class="form-label">Nom <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="lastName"
+                formControlName="lastName"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('lastName')"
+                placeholder="Votre nom">
+              <div *ngIf="getFieldError('lastName')" class="error-message">
+                {{ getFieldError('lastName') }}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email" class="form-label">Email <span class="required">*</span></label>
+              <input 
+                type="email" 
+                id="email"
+                formControlName="email"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('email')"
+                placeholder="votre@email.com">
+              <div *ngIf="getFieldError('email')" class="error-message">
+                {{ getFieldError('email') }}
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone" class="form-label">Téléphone</label>
+              <input 
+                type="tel" 
+                id="phone"
+                formControlName="phone"
+                class="form-control"
+                placeholder="01 23 45 67 89">
+            </div>
+          </div>
+
+          <div class="form-group form-group-select">
+            <label for="subject" class="form-label">Sujet <span class="required">*</span></label>
+            <select 
+              id="subject"
+              formControlName="subject"
+              class="form-control"
+              [class.is-invalid]="isFieldInvalid('subject')">
+              <option value="">Choisissez un sujet</option>
+              <option *ngFor="let subject of subjects" [value]="subject.value">
+                {{ subject.label }}
+              </option>
+            </select>
+            <div *ngIf="getFieldError('subject')" class="error-message">
+              {{ getFieldError('subject') }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message <span class="required">*</span></label>
+            <textarea 
+              id="message"
+              formControlName="message"
+              class="form-control"
+              [class.is-invalid]="isFieldInvalid('message')"
+              rows="6"
+              placeholder="Décrivez votre demande en détail..."></textarea>
+            <div *ngIf="getFieldError('message')" class="error-message">
+              {{ getFieldError('message') }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input 
+                type="checkbox" 
+                id="consent"
+                formControlName="consent"
+                class="form-checkbox"
+                [class.is-invalid]="isFieldInvalid('consent')">
+              <label for="consent" class="checkbox-label">
+                J'accepte que mes données personnelles soient utilisées pour traiter ma demande <span class="required">*</span>
+              </label>
+            </div>
+            <div *ngIf="getFieldError('consent')" class="error-message">
+              {{ getFieldError('consent') }}
+            </div>
+          </div>
+
+          <button 
+            type="submit" 
+            class="btn btn-primary btn-submit"
+            [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">Envoyer le message</span>
+            <span *ngIf="isSubmitting">Envoi en cours...</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info-container">
+        <div class="contact-info-card">
+          <h3 class="info-title">Nos Coordonnées</h3>
+          
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div class="info-content">
+              <strong>Adresse</strong>
+              <p>123 Rue de la Boucherie<br>75001 Paris, France</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div class="info-content">
+              <strong>Téléphone</strong>
+              <p>01 23 45 67 89</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-content">
+              <strong>Email</strong>
+              <p>contact&#64;boucherie-artisanale.fr</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">🕒</div>
+            <div class="info-content">
+              <strong>Horaires d'ouverture</strong>
+              <p>
+                Mardi - Vendredi : 8h00 - 12h30 | 15h00 - 19h00<br>
+                Samedi : 8h00 - 18h00<br>
+                Dimanche : 8h00 - 12h30<br>
+                <strong>Lundi : Fermé</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <h3 class="info-title">Commandes Spéciales</h3>
+          <p>Nous acceptons les commandes spéciales pour vos événements :</p>
+          <ul class="special-orders-list">
+            <li>Barbecues et grillades</li>
+            <li>Repas de famille</li>
+            <li>Événements d'entreprise</li>
+            <li>Fêtes et célébrations</li>
+          </ul>
+          <div class="order-info">
+            <p><strong>Délai de préparation :</strong> 48h minimum</p>
+            <p><strong>Commande minimum :</strong> 50€</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-location-card">
+      <h3 class="info-title">Comment nous trouver</h3>
+      
+      <div class="access-info">
+        <div class="info-content">
+          <div class="mode transport">
+            <h4>🚗 En voiture</h4>
+            <p>Parking gratuit disponible devant la boutique.<br>
+            Accès facile depuis le périphérique (Porte de Vincennes).</p>
+          </div>
+          <div class="mode transport">
+            <h4>🚇 En transport en commun</h4>
+            <p>
+              <strong>Métro :</strong> Ligne 1 - Station Châtelet<br>
+              <strong>Bus :</strong> Lignes 21, 27, 38, 85<br>
+              <strong>RER :</strong> RER A et B - Châtelet-Les Halles
+            </p>
+          </div>
+        </div>
+        <div class="info-content">
+          <div class="mode transport">
+            <h4>🚶 À pied</h4>
+            <p>Situé au cœur du quartier des Halles, notre boucherie est facilement accessible à pied depuis les principales attractions touristiques de Paris.
+            </p>
+          </div>
+          <div class="mode transport">
+            <h4>📦 Livraison</h4>
+            <p>
+              Livraison possible dans un rayon de 10km autour de Paris.<br>
+              Frais de livraison : 5€ (gratuit à partir de 80€ d'achat)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,12 @@
+.main-content {
+  min-height: calc(100vh - 200px); // Ajustement pour header et footer
+  padding-top: 0; // Le padding-top est géré par chaque page individuellement
+}
+
+// Styles globaux pour l'application
+:host {
+  display: block;
+  min-height: 100vh;
+  margin: -16px -8px;
+}
+

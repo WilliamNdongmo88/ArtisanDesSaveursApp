@@ -1,0 +1,124 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-background">
+    <img src="img/hero/hero-boucherie.jpg" alt="Artisan des Saveurs" class="hero-image">
+    <div class="hero-overlay"></div>
+  </div>
+  
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          L'Artisan des<br>
+          <span class="highlight">Saveurs</span>
+        </h1>
+        <p class="hero-subtitle">Spécialiste du Porc de Qualité</p>
+        <p class="hero-description">
+          Découvrez notre sélection de viandes de porc fraîches et de qualité supérieure. 
+          Tradition, savoir-faire et passion au service de votre table.
+        </p>
+        <div class="hero-actions">
+          <a routerLink="/catalogue" class="btn btn-primary">
+            Découvrir nos produits
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="featured-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Nos Produits Phares</h2>
+      <div class="section-divider"></div>
+      <!-- <p class="section-subtitle">
+        Découvrez notre sélection de produits d'exception, préparés avec soin par nos bouchers expérimentés
+      </p> -->
+    </div>
+    
+    <div class="products-grid">
+      <app-product-card 
+        *ngFor="let product of featuredProducts; trackBy: trackByProductId"
+        [product]="product"
+        [featured]="true">
+      </app-product-card>
+    </div>
+    
+    <div class="section-footer">
+      <a routerLink="/catalogue" class="btn btn-outline">
+        Voir tous nos produits
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="about-preview-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 class="about-title">Notre Savoir-Faire Artisanal</h2>
+        <p class="about-description">
+          Depuis 1985, notre boucherie familiale perpétue les traditions de la boucherie française. 
+          Nous sélectionnons avec soin nos fournisseurs pour vous offrir des viandes d'exception, 
+          dans le respect du bien-être animal et de l'environnement.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">🐷</div>
+            <div class="highlight-text">
+              <h4>Élevage Français</h4>
+              <p>Partenaires éleveurs sélectionnés</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🔪</div>
+            <div class="highlight-text">
+              <h4>Savoir-Faire</h4>
+              <p>Techniques traditionnelles maîtrisées</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">❄️</div>
+            <div class="highlight-text">
+              <h4>Fraîcheur</h4>
+              <p>Chaîne du froid respectée</p>
+            </div>
+          </div>
+        </div>
+        <a routerLink="/a-propos" class="btn btn-secondary">
+          En savoir plus sur nous
+        </a>
+      </div>
+      <div class="about-image">
+        <img src="img/hero/hero-boucherie.jpg" alt="Notre équipe" class="about-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="contact-cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Une Question ? Une Commande Spéciale ?</h2>
+      <p class="cta-description">
+        Notre équipe est à votre disposition pour vous conseiller et préparer vos commandes sur mesure
+      </p>
+      <div class="cta-info">
+        <div class="info-item">
+          <strong>📞 01 23 45 67 89</strong>
+        </div>
+        <div class="info-item">
+          <strong>📍 123 Rue de la Boucherie, 75001 Paris</strong>
+        </div>
+      </div>
+      <a routerLink="/contact" class="btn btn-primary">
+        Nous contacter
+      </a>
+    </div>
+  </div>
+</section>
+

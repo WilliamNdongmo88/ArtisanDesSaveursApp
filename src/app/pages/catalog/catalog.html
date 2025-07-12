@@ -1,0 +1,112 @@
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="header-content">
+      <h1 class="page-title">Notre Catalogue</h1>
+      <p class="page-subtitle">
+        Découvrez notre sélection complète de viandes de porc de qualité supérieure
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Filters Section -->
+<section class="filters-section">
+  <div class="container">
+    <div class="filters-content">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input 
+          type="text" 
+          placeholder="Rechercher un produit..."
+          [(ngModel)]="searchTerm"
+          (input)="onSearchChange()"
+          class="search-input">
+        <div class="search-icon">🔍</div>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="category-filters">
+        <button 
+          class="filter-btn"
+          [class.active]="selectedCategory === 'all'"
+          (click)="onCategoryChange('all')">
+          Tous les produits
+        </button>
+        <button 
+          *ngFor="let category of categories"
+          class="filter-btn"
+          [class.active]="selectedCategory === category"
+          (click)="onCategoryChange(category)">
+          {{ getCategoryDisplayName(category) }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+  <div class="container">
+    <!-- Results Info -->
+    <div class="results-info" *ngIf="searchTerm || selectedCategory !== 'all'">
+      <p>
+        {{ filteredProducts.length }} produit(s) trouvé(s)
+        <span *ngIf="searchTerm"> pour "{{ searchTerm }}"</span>
+      </p>
+    </div>
+
+    <!-- No Results -->
+    <div class="no-results" *ngIf="filteredProducts.length === 0">
+      <div class="no-results-content">
+        <div class="no-results-icon">🔍</div>
+        <h3>Aucun produit trouvé</h3>
+        <p>Essayez de modifier vos critères de recherche ou de sélectionner une autre catégorie.</p>
+        <button class="btn btn-primary" (click)="selectedCategory = 'all'; searchTerm = ''; filterProducts()">
+          Voir tous les produits
+        </button>
+      </div>
+    </div>
+
+    <!-- Products by Category -->
+    <div *ngIf="filteredProducts.length > 0">
+      <!-- Show all products if no specific category selected -->
+      <div *ngIf="selectedCategory === 'all' && !searchTerm">
+        <div *ngFor="let category of categories" class="category-section">
+          <div class="category-header">
+            <h2 class="category-title">{{ getCategoryDisplayName(category) }}</h2>
+            <div class="category-divider"></div>
+          </div>
+          
+          <div class="products-grid">
+            <app-product-card 
+              *ngFor="let product of getProductsByCategory(category); trackBy: trackByProductId"
+              [product]="product">
+            </app-product-card>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show filtered products -->
+      <div *ngIf="selectedCategory !== 'all' || searchTerm" class="filtered-products">
+        <div class="products-grid">
+          <app-product-card 
+            *ngFor="let product of filteredProducts; trackBy: trackByProductId"
+            [product]="product">
+          </app-product-card>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="catalog-cta">
+      <div class="cta-content">
+        <h3>Intéressé par nos produits ?</h3>
+        <p>Contactez-nous pour passer commande ou obtenir plus d'informations sur nos produits.</p>
+        <a routerLink="/contact" class="btn btn-primary">
+          Nous Contacter
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

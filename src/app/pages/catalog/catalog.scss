@@ -1,0 +1,851 @@
+// Page Header
+.page-header {
+  background: linear-gradient(135deg, #8B0000 0%, #654321 100%);
+  color: white;
+  padding: 8rem 0 4rem;
+  margin-top: 80px; // Compensation pour la navbar fixe
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .header-content {
+    text-align: left;
+
+    .page-title {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Georgia', serif;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Filters Section
+.filters-section {
+  background: #f8f9fa;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e9ecef;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .filters-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .search-bar {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      border: 2px solid #e9ecef;
+      border-radius: 25px;
+      font-size: 1rem;
+      background: white;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: none;
+        border-color: #8B0000;
+        box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+      }
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+  }
+
+  .category-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .filter-btn {
+      padding: 0.8rem 1.5rem;
+      border: 2px solid #8B0000;
+      background: white;
+      color: #8B0000;
+      border-radius: 25px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      font-size: 1rem;
+
+      &:hover {
+        background: #8B0000;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      &.active {
+        background: #8B0000;
+        color: white;
+        box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+// Products Section
+.products-section {
+  padding: 3rem 0;
+  min-height: 60vh;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .results-info {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    p {
+      color: #6c757d;
+      font-size: 1rem;
+      font-style: italic;
+    }
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 4rem 0;
+
+    .no-results-content {
+      max-width: 400px;
+      margin: 0 auto;
+
+      .no-results-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        opacity: 0.5;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        color: #495057;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: #6c757d;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+
+        &.btn-primary {
+          background: #8B0000;
+          color: white;
+
+          &:hover {
+            background: #6d0000;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+
+  .category-section {
+    margin-bottom: 4rem;
+
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+
+    .category-header {
+      text-align: left;
+      margin-bottom: 2rem;
+
+      .category-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #8B0000;
+        font-family: 'Georgia', serif;
+        margin-bottom: 1rem;
+      }
+
+      .category-divider {
+        width: 100%;
+        max-width: 75rem;
+        height: 3px;
+        background: #8B0000;
+        margin: 0;
+        border-radius: 2px;
+      }
+
+      .mb-5 {
+          margin-bottom: 3rem !important;
+      }
+    }
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .catalog-cta {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+
+    .cta-content {
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-family: 'Georgia', serif;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: inline-block;
+
+        &.btn-primary {
+          background: #8B0000;
+          color: white;
+          border: 2px solid #8B0000;
+
+          &:hover {
+            background: #6d0000;
+            border-color: #6d0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animations
+.category-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.filter-btn {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design - Amélioré pour tous les écrans
+// Tablettes et écrans moyens (768px - 1024px)
+@media (max-width: 1024px) {
+  .products-section {
+    .products-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .catalog-cta {
+      padding: 2.5rem;
+    }
+  }
+}
+
+// Tablettes (768px - 992px)
+@media (max-width: 992px) {
+  .page-header {
+    padding: 6rem 0 3rem;
+
+    .header-content {
+      .page-title {
+        font-size: 2.5rem;
+      }
+
+      .page-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .filters-section {
+    padding: 1.5rem 0;
+
+    .search-bar {
+      max-width: 350px;
+
+      .search-input {
+        padding: 0.9rem 0.9rem 0.9rem 2.8rem;
+        font-size: 0.95rem;
+      }
+
+      .search-icon {
+        left: 0.9rem;
+        font-size: 1.1rem;
+      }
+    }
+
+    .category-filters {
+      gap: 0.8rem;
+
+      .filter-btn {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .products-section {
+    padding: 2.5rem 0;
+
+    .category-section {
+      margin-bottom: 3.5rem;
+
+      .category-header {
+        .category-title {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+    }
+  }
+}
+
+// Smartphones et petites tablettes (576px - 768px)
+@media (max-width: 768px) {
+  .page-header {
+    padding: 5rem 0 2.5rem;
+    margin-top: 60px;
+
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .header-content {
+      text-align: center;
+
+      .page-title {
+        font-size: 2.2rem;
+      }
+
+      .page-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .filters-section {
+    padding: 1.5rem 0;
+
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .filters-content {
+      gap: 1.2rem;
+    }
+
+    .search-bar {
+      max-width: 100%;
+
+      .search-input {
+        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+        font-size: 0.9rem;
+      }
+
+      .search-icon {
+        left: 0.8rem;
+        font-size: 1rem;
+      }
+    }
+
+    .category-filters {
+      gap: 0.6rem;
+
+      .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .products-section {
+    padding: 2rem 0;
+
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .category-section {
+      margin-bottom: 3rem;
+
+      .category-header {
+        .category-title {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .catalog-cta {
+      padding: 2rem;
+      margin-top: 3rem;
+
+      .cta-content {
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Petits smartphones (480px - 576px)
+@media (max-width: 576px) {
+  .page-header {
+    padding: 4rem 0 2rem;
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .header-content {
+      .page-title {
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .page-subtitle {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .filters-section {
+    padding: 1.2rem 0;
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .filters-content {
+      gap: 1rem;
+    }
+
+    .search-bar {
+      .search-input {
+        padding: 0.7rem 0.7rem 0.7rem 2.2rem;
+        font-size: 0.85rem;
+        border-radius: 20px;
+      }
+
+      .search-icon {
+        left: 0.7rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    .category-filters {
+      gap: 0.5rem;
+
+      .filter-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .products-section {
+    padding: 1.5rem 0;
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .results-info {
+      margin-bottom: 1.5rem;
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .no-results {
+      padding: 3rem 0;
+
+      .no-results-content {
+        .no-results-icon {
+          font-size: 3rem;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .btn {
+          padding: 0.8rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .category-section {
+      margin-bottom: 2.5rem;
+
+      .category-header {
+        margin-bottom: 1.5rem;
+
+        .category-title {
+          font-size: 1.4rem;
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+
+    .products-grid {
+      gap: 1.2rem;
+    }
+
+    .catalog-cta {
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+
+      .cta-content {
+        h3 {
+          font-size: 1.3rem;
+          margin-bottom: 0.8rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .btn {
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Très petits écrans (333px - 480px)
+@media (max-width: 480px) {
+  .page-header {
+    padding: 3rem 0 1.5rem;
+
+    .container {
+      padding: 0 0.8rem;
+    }
+
+    .header-content {
+      .page-title {
+        font-size: 1.7rem;
+        line-height: 1.2;
+      }
+
+      .page-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .filters-section {
+    padding: 1rem 0;
+
+    .container {
+      padding: 0 0.8rem;
+    }
+
+    .filters-content {
+      gap: 0.8rem;
+    }
+
+    .search-bar {
+      .search-input {
+        padding: 0.6rem 0.6rem 0.6rem 2rem;
+        font-size: 0.8rem;
+        border-radius: 18px;
+      }
+
+      .search-icon {
+        left: 0.6rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    .category-filters {
+      gap: 0.4rem;
+
+      .filter-btn {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+        border-radius: 18px;
+        border-width: 1.5px;
+      }
+    }
+  }
+
+  .products-section {
+    padding: 1rem 0;
+
+    .container {
+      padding: 0 0.8rem;
+    }
+
+    .results-info {
+      margin-bottom: 1rem;
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .no-results {
+      padding: 2rem 0;
+
+      .no-results-content {
+        .no-results-icon {
+          font-size: 2.5rem;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .btn {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .category-section {
+      margin-bottom: 2rem;
+
+      .category-header {
+        margin-bottom: 1.2rem;
+
+        .category-title {
+          font-size: 1.2rem;
+          margin-bottom: 0.6rem;
+        }
+
+        .category-divider {
+          height: 2px;
+        }
+      }
+    }
+
+    .products-grid {
+      gap: 1rem;
+    }
+
+    .catalog-cta {
+      padding: 1.2rem;
+      margin-top: 2rem;
+
+      .cta-content {
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.6rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .btn {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Écrans ultra-petits (333px minimum)
+@media (max-width: 360px) {
+  .page-header {
+    .header-content {
+      .page-title {
+        font-size: 1.5rem;
+      }
+
+      .page-subtitle {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .filters-section {
+    .search-bar {
+      .search-input {
+        padding: 0.5rem 0.5rem 0.5rem 1.8rem;
+        font-size: 0.75rem;
+      }
+
+      .search-icon {
+        left: 0.5rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .category-filters {
+      .filter-btn {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .products-section {
+    .results-info {
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .no-results {
+      .no-results-content {
+        .no-results-icon {
+          font-size: 2rem;
+        }
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+
+        .btn {
+          padding: 0.6rem 1rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .category-section {
+      .category-header {
+        .category-title {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .catalog-cta {
+      padding: 1rem;
+
+      .cta-content {
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+
+        .btn {
+          padding: 0.6rem 1rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

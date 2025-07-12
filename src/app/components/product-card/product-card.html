@@ -1,0 +1,30 @@
+<div class="product-card" [class.featured]="featured">
+  <div class="product-image">
+    <img 
+      [src]="product.image" 
+      [alt]="product.name"
+      (error)="onImageError($event)"
+      loading="lazy">
+    <div class="product-overlay">
+      <div class="product-origin">{{ product.origin }}</div>
+    </div>
+  </div>
+  
+  <div class="product-content">
+    <h3 class="product-title">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description }}</p>
+    
+    <div class="product-footer">
+      <div class="product-price">
+        <span class="price">À partir de {{ product.price | number:'1.2-2' }}€/{{ product.unit }}</span>
+        <!-- <span class="unit">/{{ product.unit }}</span> -->
+      </div>
+      
+      <!-- <div class="product-actions">
+        <button class="btn btn-outline" type="button">
+          Plus d'infos
+        </button>
+      </div> -->
+    </div>
+  </div>
+</div>
