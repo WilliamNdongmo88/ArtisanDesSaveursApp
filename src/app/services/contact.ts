@@ -1,24 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
-import { ContactForm } from '../models/product';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, delay, tap } from 'rxjs/operators';
+import { ContactForm, ContactForms, ContactRequest } from '../models/product';
+import { User } from '../models/user';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
 
-  constructor() { }
+  private apiUrl = 'http://localhost:8070/api/users';
 
-  sendContactForm(formData: ContactForm): Observable<{ success: boolean; message: string }> {
+  constructor(private http: HttpClient) { }
+
+  sendContactForm(formDatas: ContactForms): Observable<{ success: boolean; message: string }> {
     // Simulation d'un appel API
-    console.log('Formulaire de contact envoyé:', formData);
-    
-    // Simulation d'un délai de traitement
-    return of({
-      success: true,
-      message: 'Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.'
-    }).pipe(delay(1000));
+    console.log('Formulaire de contact envoyé:', formDatas);
+		return this.http.post<{ success: boolean; message: string }>(this.apiUrl+'/place-order', formDatas).pipe(
+			tap((response) => console.log('Produit créé avec succès par l\'API :', response),
+    ),
+			catchError(err => {
+				console.error("[ProductService] Erreur de l'API : ", err.error.message);
+				return throwError(() => err);
+			})
+		);
+    // return of({
+    //   success: true,
+    //   message: 'Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.'
+    // }).pipe(delay(1000));
   }
 
   validateEmail(email: string): boolean {

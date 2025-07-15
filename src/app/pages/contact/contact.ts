@@ -38,7 +38,9 @@ export class ContactComponent {
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: [''],
+      phone: ['', [
+      Validators.required,
+      Validators.pattern(/^\+[1-9][0-9]{7,14}$/)]],
       subject: ['', Validators.required],
       message: ['', [Validators.required, Validators.minLength(10)]],
       consent: [false, Validators.requiredTrue]
@@ -52,12 +54,28 @@ export class ContactComponent {
 
       const formData: ContactForm = this.contactForm.value;
 
-      this.contactService.sendContactForm(formData).subscribe({
+      const contactRequest = {
+          subject: formData.subject,
+          message: formData.message
+      }
+      const contactRequests = [];
+      contactRequests.push(contactRequest)
+      const formDatas = {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          consent: formData.consent,
+          contactRequests: contactRequests
+      }
+
+      this.contactService.sendContactForm(formDatas).subscribe({
         next: (response) => {
           this.submitSuccess = true;
           this.submitMessage = response.message;
           this.contactForm.reset();
           this.isSubmitting = false;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
           
           // Masquer le message après 5 secondes
           setTimeout(() => {
@@ -69,6 +87,7 @@ export class ContactComponent {
           this.submitSuccess = false;
           this.submitMessage = 'Une erreur est survenue. Veuillez réessayer.';
           this.isSubmitting = false;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
           
           // Masquer le message après 5 secondes
           setTimeout(() => {

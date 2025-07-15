@@ -30,15 +30,15 @@
 <!-- Featured Products Section -->
 <section class="featured-section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Nos Produits Phares</h2>
-      <div class="section-divider"></div>
+    <div class="section-header slide-up">
+      <h2 class="section-title slide-up">Nos Produits Phares</h2>
+      <div class="section-divider slide-up"></div>
       <!-- <p class="section-subtitle">
         Découvrez notre sélection de produits d'exception, préparés avec soin par nos bouchers expérimentés
       </p> -->
     </div>
     
-    <div class="products-grid">
+    <div class="products-grid slide-up">
       <app-product-card 
         *ngFor="let product of featuredProducts; trackBy: trackByProductId"
         [product]="product"
@@ -57,9 +57,9 @@
 <!-- About Preview Section -->
 <section class="about-preview-section">
   <div class="container">
-    <div class="about-content">
-      <div class="about-text">
-        <h2 class="about-title">Notre Savoir-Faire Artisanal</h2>
+    <div class="about-content slide-up">
+      <div class="about-text slide-up">
+        <h2 class="about-title slide-up">Notre Savoir-Faire Artisanal</h2>
         <p class="about-description">
           Depuis 2022, notre boucherie familiale perpétue les traditions de la boucherie Mauricienne. 
           Nous sélectionnons avec soin nos fournisseurs pour vous offrir des viandes d'exception, 
@@ -101,10 +101,10 @@
 
 <!-- Contact CTA Section -->
 <section class="contact-cta-section">
-  <div class="container">
+  <div class="container slide-up">
     <div class="cta-content">
-      <h2 class="cta-title">Une Question ? Une Commande Spéciale ?</h2>
-      <p class="cta-description">
+      <h2 class="cta-title slide-up">Une Question ? Une Commande Spéciale ?</h2>
+      <p class="cta-description slide-up">
         Notre équipe est à votre disposition pour vous conseiller et préparer vos commandes sur mesure
       </p>
       <div class="cta-info">

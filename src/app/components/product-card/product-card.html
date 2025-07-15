@@ -1,5 +1,5 @@
-<div class="product-card" [class.featured]="featured">
-  <div class="product-image">
+<div class="product-card slide-up" [class.featured]="featured">
+  <div class="product-image slide-up">
     <img 
       [src]="product.image" 
       [alt]="product.name"
@@ -10,7 +10,7 @@
     </div>
   </div>
   
-  <div class="product-content">
+  <div class="product-content slide-up">
     <h3 class="product-title">{{ product.name }}</h3>
     <p class="product-description">{{ product.description }}</p>
     
@@ -20,11 +20,11 @@
         <!-- <span class="unit">/{{ product.unit }}</span> -->
       </div>
       
-      <!-- <div class="product-actions">
+      <div class="product-actions">
         <button class="btn btn-outline" type="button">
-          Plus d'infos
+          Ajouter au panier
         </button>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>

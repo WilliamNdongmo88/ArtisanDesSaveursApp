@@ -23,9 +23,24 @@ export interface ContactForm {
   firstName: string;
   lastName: string;
   email: string;
-  phone?: string;
+  phone: string;
   subject: string;
   message: string;
   consent: boolean;
 }
+
+export interface ContactRequest{
+  subject: string;
+  message: string;
+}
+
+export interface ContactForms {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  consent: boolean;
+  contactRequests: ContactRequest[];
+}
+
 
