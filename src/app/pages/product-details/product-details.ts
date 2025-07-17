@@ -72,7 +72,7 @@ export class ProductDetailsComponent implements OnInit {
     if (this.product) {
       this.cartService.addToCart(this.product, this.quantity);
       // Optionnel: afficher un message de confirmation
-      confirm(`${this.quantity} ${this.product.name} ajouté(s) au panier !`);
+      //confirm(`${this.quantity} ${this.product.name} ajouté(s) au panier !`);
     }
   }
 

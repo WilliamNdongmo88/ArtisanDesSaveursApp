@@ -12,6 +12,8 @@ import { CartService, CartItem } from '../../services/cart.service';
   styleUrl: './cart.scss'
 })
 export class CartComponent implements OnInit, OnDestroy {
+  submitMessage = '';
+  submitSuccess = false;
   cartItems: CartItem[] = [];
   subtotal = 0;
   discountPercentage = 10;
@@ -97,13 +99,24 @@ export class CartComponent implements OnInit, OnDestroy {
     console.log('Commande soumise:', orderSummary);
     
     // Message de confirmation
-    alert(`Commande soumise avec succès !\n\nTotal: Rs ${this.total.toFixed(2)}\n${this.isEligibleForFreeShipping ? 'Livraison gratuite incluse !' : 'Frais de livraison à ajouter'}`);
+    this.submitSuccess = true;
+    this.submitMessage = `Commande soumise avec succès !\n\nTotal: Rs ${this.total.toFixed(2)}\n` +
+      `${this.isEligibleForFreeShipping ? 'Livraison gratuite incluse !' : 'Frais de livraison à ajouter'}`;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
+    // Masquer le message après 5 secondes
+    setTimeout(() => {
+      this.submitMessage = '';
+      this.submitSuccess = false;
+    }, 5000);
     // Vider le panier après la commande
     this.clearCart();
     
     // Rediriger vers la page d'accueil
-    this.router.navigate(['/']);
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 6000);
   }
 
   onImageError(event: any) {
