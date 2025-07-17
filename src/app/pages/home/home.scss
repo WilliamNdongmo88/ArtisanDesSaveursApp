@@ -461,6 +461,7 @@
     .products-grid {
       grid-template-columns: minmax(280px, 1fr);
       gap: 1rem;
+      margin-left: -6px;
     }
   }
 

@@ -1,0 +1,105 @@
+<div class="product-details-container">
+  <!-- Loading state -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Chargement du produit...</p>
+  </div>
+
+  <!-- Error state -->
+  <div *ngIf="error && !loading" class="error-container">
+    <h2>Produit non trouvé</h2>
+    <p>Le produit que vous recherchez n'existe pas ou n'est plus disponible.</p>
+    <button class="btn btn-primary" (click)="goBack()">Retour au catalogue</button>
+  </div>
+
+  <!-- Product details -->
+  <div *ngIf="product && !loading && !error" class="product-details">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a routerLink="/">Accueil</a>
+      <span class="separator">></span>
+      <a routerLink="/catalogue">Catalogue</a>
+      <span class="separator">></span>
+      <span class="current">{{ product.name }}</span>
+    </nav>
+
+    <!-- Product content -->
+    <div class="product-content">
+      <!-- Product image -->
+      <div class="product-image-section">
+        <div class="product-image">
+          <img 
+            [src]="product.image" 
+            [alt]="product.name"
+            (error)="onImageError($event)"
+            loading="lazy">
+          <div class="product-origin-badge">{{ product.origin }}</div>
+        </div>
+      </div>
+
+      <!-- Product info -->
+      <div class="product-info-section">
+        <h1 class="product-title">{{ product.name }}</h1>
+        <p class="product-description">{{ product.description }}</p>
+        
+        <!-- Preparation info if available -->
+        <div *ngIf="product.preparation" class="preparation-info">
+          <h3>Préparation recommandée</h3>
+          <p>{{ product.preparation }}</p>
+        </div>
+
+        <!-- Discount offer -->
+        <div class="discount-offer">
+          <div class="discount-badge">
+            <span class="discount-text">Offre spéciale -{{ discountPercentage }}%</span>
+          </div>
+          <div class="price-section">
+            <span class="original-price">Rs {{ originalPrice | number:'1.2-2' }}/{{ product.unit }}</span>
+            <span class="discounted-price">Rs {{ discountedPrice | number:'1.2-2' }}/{{ product.unit }}</span>
+          </div>
+          <p class="discount-description">
+            Profitez de notre offre spéciale ! Commandez maintenant et économisez {{ discountPercentage }}% sur ce produit de qualité artisanale.
+          </p>
+        </div>
+
+        <!-- Quantity selector -->
+        <div class="quantity-section">
+          <label for="quantity">Quantité :</label>
+          <div class="quantity-controls">
+            <button class="quantity-btn" (click)="decreaseQuantity()" [disabled]="quantity <= 1">-</button>
+            <span class="quantity-display">{{ quantity }}</span>
+            <button class="quantity-btn" (click)="increaseQuantity()">+</button>
+          </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="action-buttons">
+          <button class="btn btn-primary add-to-cart-btn" (click)="addToCart()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Ajouter au panier
+          </button>
+          <button class="btn btn-outline" (click)="goBack()">Retour au catalogue</button>
+        </div>
+
+        <!-- Information livraison gratuite -->
+        <div class="shipping-info">
+          <div class="shipping-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 3H5C3.9 3 3 3.9 3 5V16C3 17.1 3.9 18 5 18H16C17.1 18 18 17.1 18 16V5C18 3.9 17.1 3 16 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 8H21L19 13H18V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="7.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="shipping-text">
+            <h4>Livraison gratuite</h4>
+            <p>Profitez de la livraison gratuite pour toute commande à partir de <strong>Rs 3,000</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,126 @@
+<div class="cart-container">
+  <div class="cart-content">
+    <!-- En-tête du panier -->
+    <div class="cart-header">
+      <h1 class="cart-title">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Mon Panier
+      </h1>
+      <p class="cart-subtitle" *ngIf="cartItems.length > 0">{{ cartItems.length }} article(s) dans votre panier</p>
+    </div>
+
+    <!-- Panier vide -->
+    <div *ngIf="cartItems.length === 0" class="empty-cart">
+      <div class="empty-cart-icon">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2>Votre panier est vide</h2>
+      <p>Découvrez nos délicieux produits de porc artisanaux</p>
+      <button class="btn btn-primary" (click)="continueShopping()">Découvrir nos produits</button>
+    </div>
+
+    <!-- Articles du panier -->
+    <div *ngIf="cartItems.length > 0" class="cart-items-section">
+      <div class="cart-items">
+        <div *ngFor="let item of cartItems" class="cart-item">
+          <div class="item-image">
+            <img 
+              [src]="item.product.image" 
+              [alt]="item.product.name"
+              (error)="onImageError($event)"
+              loading="lazy">
+            <div class="item-origin">{{ item.product.origin }}</div>
+          </div>
+          
+          <div class="item-details">
+            <h3 class="item-name">{{ item.product.name }}</h3>
+            <p class="item-description">{{ item.product.description }}</p>
+            <div class="item-price">
+              <span class="unit-price">Rs {{ item.product.price | number:'1.2-2' }}/{{ item.product.unit }}</span>
+            </div>
+          </div>
+          
+          <div class="item-quantity">
+            <label>Quantité</label>
+            <div class="quantity-controls">
+              <button class="quantity-btn" (click)="updateQuantity(item.product.id, item.quantity - 1)">-</button>
+              <span class="quantity-display">{{ item.quantity }}</span>
+              <button class="quantity-btn" (click)="updateQuantity(item.product.id, item.quantity + 1)">+</button>
+            </div>
+          </div>
+          
+          <div class="item-total">
+            <div class="total-price">Rs {{ (item.product.price * item.quantity) | number:'1.2-2' }}</div>
+            <button class="remove-btn" (click)="removeItem(item.product.id)" title="Supprimer cet article">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Résumé de la commande -->
+      <div class="order-summary">
+        <h3>Résumé de la commande</h3>
+        
+        <div class="summary-line">
+          <span>Sous-total</span>
+          <span>Rs {{ subtotal | number:'1.2-2' }}</span>
+        </div>
+        
+        <div class="summary-line discount">
+          <span>Réduction ({{ discountPercentage }}%)</span>
+          <span>-Rs {{ discountAmount | number:'1.2-2' }}</span>
+        </div>
+        
+        <div class="summary-line total">
+          <span>Total</span>
+          <span>Rs {{ total | number:'1.2-2' }}</span>
+        </div>
+
+        <!-- Information livraison -->
+        <div class="shipping-status">
+          <div *ngIf="isEligibleForFreeShipping" class="free-shipping">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 3H5C3.9 3 3 3.9 3 5V16C3 17.1 3.9 18 5 18H16C17.1 18 18 17.1 18 16V5C18 3.9 17.1 3 16 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 8H21L19 13H18V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="7.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Livraison gratuite incluse !</span>
+          </div>
+          <div *ngIf="!isEligibleForFreeShipping" class="shipping-needed">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Ajoutez Rs {{ amountNeededForFreeShipping | number:'1.2-2' }} pour la livraison gratuite</span>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="cart-actions">
+          <button class="btn btn-outline" (click)="continueShopping()">Continuer mes achats</button>
+          <button class="btn btn-primary submit-order-btn" (click)="submitOrder()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Valider la commande
+          </button>
+        </div>
+
+        <button class="clear-cart-btn" (click)="clearCart()" *ngIf="cartItems.length > 0">
+          Vider le panier
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
