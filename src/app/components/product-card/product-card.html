@@ -18,6 +18,13 @@
       <div class="product-price">
         <span class="price">À partir de Rs {{ product.price | number:'1.2-2' }}/{{ product.unit }}</span>
         <!-- <span class="unit">/{{ product.unit }}</span> -->
+        <button
+          class="add-to-cart btn btn-outline"
+          (click)="addToCart()"
+          aria-label="Add to cart"
+        >
+          +
+        </button>
       </div>
       
       <div class="product-actions">

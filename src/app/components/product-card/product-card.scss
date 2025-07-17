@@ -101,7 +101,7 @@
   }
 
   .product-price {
-    display: flex;
+    display: inline;
     flex-direction: column;
     
     .price {
@@ -115,6 +115,32 @@
       color: #95a5a6;
       margin-top: 0.2rem;
     }
+
+  .add-to-cart {
+    bottom: 2rem;
+    right: 2rem;
+    margin-left: 3rem;
+    background-color: white;
+    color: #8b0000;
+    border: none;
+    border-radius: 40%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &.btn-outline {
+      background: transparent;
+      color: #8B0000;
+      border: 2px solid #8B0000;
+
+      &:hover {
+        background: #8B0000;
+        color: white;
+        transform: translateY(-2px);
+      }
+    }
+  }
   }
 
   .product-actions {
