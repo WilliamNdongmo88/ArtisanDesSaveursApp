@@ -109,14 +109,14 @@ export class CartComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.submitMessage = '';
       this.submitSuccess = false;
-    }, 5000);
+    }, 8000);
     // Vider le panier après la commande
     this.clearCart();
     
     // Rediriger vers la page d'accueil
-    setTimeout(() => {
-      this.router.navigate(['/']);
-    }, 6000);
+    // setTimeout(() => {
+    //   this.router.navigate(['/']);
+    // }, 6000);
   }
 
   onImageError(event: any) {
