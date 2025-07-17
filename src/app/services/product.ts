@@ -16,7 +16,8 @@ export class ProductService {
       category: ProductCategory.COTES_TRAVERS,
       image: 'img/produits/cote-de-porc.jpg',
       featured: true,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Idéales grillées au barbecue ou à la plancha. Cuisson recommandée : 6-8 minutes de chaque côté à feu moyen.'
     },
     {
       id: '2',
@@ -27,7 +28,8 @@ export class ProductService {
       category: ProductCategory.COTES_TRAVERS,
       image: 'img/produits/cotes-de-porc.jpg',
       featured: false,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Cuisson lente au four à 160°C pendant 2h30 ou au barbecue à feu doux. Badigeonner régulièrement de marinade.'
     },
     {
       id: '3',
@@ -38,7 +40,8 @@ export class ProductService {
       category: ProductCategory.ROTIS_FILETS,
       image: 'img/produits/roti-de-porc.jpg',
       featured: true,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Cuisson au four à 180°C, compter 25 minutes par 500g. Laisser reposer 10 minutes avant de découper.'
     },
     {
       id: '4',
@@ -49,7 +52,8 @@ export class ProductService {
       category: ProductCategory.ROTIS_FILETS,
       image: 'img/produits/roti-de-porc.jpg',
       featured: false,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Cuisson rapide à la poêle ou au four. 15-20 minutes à 200°C. Ne pas trop cuire pour garder la tendreté.'
     },
     {
       id: '5',
@@ -60,7 +64,8 @@ export class ProductService {
       category: ProductCategory.ROTIS_FILETS,
       image: 'img/produits/roti-de-porc.jpg',
       featured: false,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Cuisson au four à 170°C pendant 45 minutes. Arroser régulièrement avec le jus de cuisson.'
     },
     {
       id: '6',
@@ -71,7 +76,8 @@ export class ProductService {
       category: ProductCategory.SAUCISSES_CHARCUTERIE,
       image: 'img/produits/saucisses-fraiches.jpg',
       featured: true,
-      origin: 'Fabrication Maison'
+      origin: 'Fabrication Maison',
+      preparation: 'Cuisson à la poêle à feu moyen pendant 12-15 minutes en les retournant régulièrement.'
     },
     {
       id: '7',
@@ -82,7 +88,8 @@ export class ProductService {
       category: ProductCategory.SAUCISSES_CHARCUTERIE,
       image: 'img/produits/saucisses-fraiches.jpg',
       featured: false,
-      origin: 'Fabrication Maison'
+      origin: 'Fabrication Maison',
+      preparation: 'Parfaites grillées au barbecue ou cuites à la poêle avec un peu d\'huile d\'olive.'
     },
     {
       id: '8',
@@ -93,7 +100,8 @@ export class ProductService {
       category: ProductCategory.SAUCISSES_CHARCUTERIE,
       image: 'img/produits/saucisses-fraiches.jpg',
       featured: false,
-      origin: 'Fabrication Maison'
+      origin: 'Fabrication Maison',
+      preparation: 'Prêt à consommer. Parfait en sandwich, salade ou plat chaud. Se conserve 5 jours au réfrigérateur.'
     },
     {
       id: '9',
@@ -104,7 +112,8 @@ export class ProductService {
       category: ProductCategory.MORCEAUX_BRAISER,
       image: 'img/produits/jarret-de-porc.jpg',
       featured: false,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Idéal pour les plats mijotés. Cuisson lente 2-3h dans un bouillon avec légumes et aromates.'
     },
     {
       id: '10',
@@ -115,7 +124,8 @@ export class ProductService {
       category: ProductCategory.MORCEAUX_BRAISER,
       image: 'img/produits/palette-de-porc.jpg',
       featured: false,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Braiser au four à 160°C pendant 2h30 avec légumes et vin blanc. Viande fondante garantie.'
     },
     {
       id: '11',
@@ -126,7 +136,8 @@ export class ProductService {
       category: ProductCategory.MORCEAUX_BRAISER,
       image: 'img/produits/poitrine-de-porc.jpg',
       featured: false,
-      origin: 'Île Maurice'
+      origin: 'Île Maurice',
+      preparation: 'Pour petit salé : cuire 1h30 dans l\'eau bouillante avec légumes. Pour lardons : découper et faire revenir.'
     },
     {
       id: '12',
@@ -137,7 +148,8 @@ export class ProductService {
       category: ProductCategory.PRODUITS_TRANSFORMES,
       image: 'img/produits/saucisses-fraiches.jpg',
       featured: false,
-      origin: 'Fabrication Maison'
+      origin: 'Fabrication Maison',
+      preparation: 'Faire revenir à sec dans une poêle chaude jusqu\'à ce qu\'ils soient dorés et croustillants.'
     },
     {
       id: '13',
@@ -148,7 +160,8 @@ export class ProductService {
       category: ProductCategory.PRODUITS_TRANSFORMES,
       image: 'img/produits/saucisses-fraiches.jpg',
       featured: false,
-      origin: 'Fabrication Maison'
+      origin: 'Fabrication Maison',
+      preparation: 'Cuire à la poêle 2-3 minutes de chaque côté jusqu\'à obtenir la croustillance désirée.'
     },
     {
       id: '14',
@@ -159,7 +172,8 @@ export class ProductService {
       category: ProductCategory.PRODUITS_TRANSFORMES,
       image: 'img/produits/saucisses-fraiches.jpg',
       featured: false,
-      origin: 'Fabrication Maison'
+      origin: 'Fabrication Maison',
+      preparation: 'Prêt à consommer. Servir à température ambiante avec du pain frais et des cornichons.'
     }
   ];
 

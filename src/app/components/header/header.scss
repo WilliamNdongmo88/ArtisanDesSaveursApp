@@ -427,3 +427,100 @@
     }
   }
 }
+
+// Styles pour l'icône panier
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #8B0000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 1rem;
+
+  &:hover {
+    color: #654321;
+    background-color: rgba(139, 0, 0, 0.1);
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    min-width: 20px;
+    animation: pulse 0.3s ease-in-out;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Responsive pour l'icône panier
+@media (max-width: 768px) {
+  .cart-icon {
+    margin-left: 0.5rem;
+    padding: 0.4rem;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .cart-count {
+      width: 18px;
+      height: 18px;
+      font-size: 0.7rem;
+      top: -4px;
+      right: -4px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-icon {
+    margin-left: 0.3rem;
+    padding: 0.3rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .cart-count {
+      width: 16px;
+      height: 16px;
+      font-size: 0.65rem;
+      top: -3px;
+      right: -3px;
+    }
+  }
+}
+
