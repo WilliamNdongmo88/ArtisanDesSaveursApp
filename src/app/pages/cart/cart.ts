@@ -109,7 +109,7 @@ export class CartComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.submitMessage = '';
       this.submitSuccess = false;
-    }, 8000);
+    }, 10000);
     // Vider le panier après la commande
     this.clearCart();
     
