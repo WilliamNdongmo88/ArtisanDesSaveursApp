@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CartService, CartItem } from '../../services/cart.service';
+import { OrderPayload } from '../../models/order';
 
 @Component({
   selector: 'app-cart',
@@ -96,22 +97,64 @@ export class CartComponent implements OnInit, OnDestroy {
       freeShipping: this.isEligibleForFreeShipping
     };
 
-    console.log('Commande soumise:', orderSummary);
+    const order: OrderPayload = {
+      firstName: 'William',
+      lastName: 'Ndongmo',
+      email: 'williamndongmo899@gmail.com',
+      phone: '+2301234567',
+      items: this.cartItems,
+      subtotal: this.subtotal,
+      discount: this.discountAmount,
+      total: this.total,
+      freeShipping: this.isEligibleForFreeShipping
+    }
+
+    console.log('Commande soumise:', order);
+
+    //Envoi de la commande a l'API
+    this.cartService.submitOrder(order).subscribe({
+      next: (response) => {
+        this.submitSuccess = true;
+        const message = response.message;
+        this.submitMessage = `Commande soumise avec succès !\n\nTotal: Rs ${this.total.toFixed(2)}\n` +
+          `${this.isEligibleForFreeShipping ? 'Livraison gratuite incluse !' : 'Frais de livraison à ajouter'}`;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Masquer le message après 5 secondes
+        setTimeout(() => {
+          this.submitMessage = '';
+          this.submitSuccess = false;
+        }, 10000);
+
+        // Vider le panier après la commande
+        this.clearCart();
+      },
+      error: (error) => {
+        this.submitSuccess = false;
+        this.submitMessage = 'Une erreur est survenue. Veuillez réessayer.';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Masquer le message après 5 secondes
+        setTimeout(() => {
+          this.submitMessage = '';
+        }, 5000);
+      }
+    });
     
     // Message de confirmation
-    this.submitSuccess = true;
-    this.submitMessage = `Commande soumise avec succès !\n\nTotal: Rs ${this.total.toFixed(2)}\n` +
-      `${this.isEligibleForFreeShipping ? 'Livraison gratuite incluse !' : 'Frais de livraison à ajouter'}`;
+    // this.submitSuccess = true;
+    // this.submitMessage = `Commande soumise avec succès !\n\nTotal: Rs ${this.total.toFixed(2)}\n` +
+    //   `${this.isEligibleForFreeShipping ? 'Livraison gratuite incluse !' : 'Frais de livraison à ajouter'}`;
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Masquer le message après 5 secondes
-    setTimeout(() => {
-      this.submitMessage = '';
-      this.submitSuccess = false;
-    }, 10000);
-    // Vider le panier après la commande
-    this.clearCart();
+    // // Masquer le message après 5 secondes
+    // setTimeout(() => {
+    //   this.submitMessage = '';
+    //   this.submitSuccess = false;
+    // }, 10000);
+    // // Vider le panier après la commande
+    // this.clearCart();
     
     // Rediriger vers la page d'accueil
     // setTimeout(() => {
