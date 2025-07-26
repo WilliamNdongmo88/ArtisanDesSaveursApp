@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContactService {
 
   //private apiUrl = 'http://localhost:8070/api/users';
-  private apiUrl = 'https://artisan-des-saveursp-production.up.railway.app/api/users';
+  private apiUrl = 'https://artisan-des-saveurs-production.up.railway.app/api/users';
 
   constructor(private http: HttpClient) { }
 
